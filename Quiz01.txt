@@ -1,0 +1,28 @@
+1. A single byte is made of 8 bits. So how many values can be represented by a single Byte? 
+A byte is 8 digits where each can be a 0 or a 1. This means that there are 256, or 2^8 different values represented in a byte.
+
+2. Which type of error results in the C# compiler not compiling the code? (Select one: Logical, Syntax, Runtime)
+Syntax. The compiler can only translate a program if the program is syntactically correct; otherwise,
+the compilation fails and you will not be able to run your program.(ThinkSharp, 2014)
+
+3. Show the full path of the executable file of your "Hello world" program on your own computer.
+C:\Users\user\source\repos\ConsoleApp3\ConsoleApp3\Hello_World.cs
+
+4. Debugging
+Using Systems
+namespace CSC205Quiz01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("I just removed all the bugs!");
+        }
+    }
+}
+
+5. Select all the valid C# identifiers:   String, my-age, 3rdNum, dynamic, __num, M&M, @void, var
+Identifiers are user-defined name of classes, methods, variables or labels. 
+They cannot include keywords such as public, class, and void. These words will be displayed in another color. 
+I checked the list by trying to define each as a variable.
+Valid identifiers are: String, dynamic, __num, @void, var

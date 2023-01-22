@@ -1,0 +1,92 @@
+CSC180 Quiz #5
+
+1. For each of the following methods, write one sentence that describes
+abstractly what the method does. For each variable, identify the role it plays.
+public static int Banana(int[] a) //Takes an array of integers and returns the sum.
+{
+    int grape = 0;//serves as the array
+    int i = 0;//serves as the index
+    while (i < a.Length)
+    {
+        grape = grape + a[i];
+        i++;
+    }
+    return grape;
+}
+public static int Apple(int[] a, int p)//Traverses the array until the search element is found and returns the traversed portion of the array.
+{
+    int i = 0;// index
+    int pear = 0;//array
+    while (i < a.Length)
+    {
+        if (a[i] == p) pear++;// p is the search element
+        i++;
+    }
+    return pear;
+}
+public static int Grapefruit(int[] a, int p)//Traverses the array to search for an element and returns the index where it appears. 
+//Failed search returns -1. 
+{
+    for (int i = 0; i < a.Length; i++)//int i is the index
+    {
+        if (a[i] == p) return i;//int p is the searched element.
+    }
+    return -1;
+}
+
+
+2. Create a class called Car that has the following private fields:
+	vin - a string representing the vehicle identification number
+	make - a string representing the make of the car (such as Ford etc.)
+	model - a string representing the model of the car
+	mileage - an integer representing the current mileage of the car
+The class contains at least two constructors and the following two methods:
+	void Drive(int miles) - this method should increase the mileage of the car
+	void Display() - this method would display to the user the values of all the fields listed above
+In the Main method, create two different cars (Car objects), call the Drive method on each one, for different number of miles, 
+and call the Display method for each car.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace car
+{
+	public class Car
+	{
+		private string vin;
+		private string make;
+		private string model;
+		private int mileage;
+
+		public Car(string vn, string mk, string mdl, int mil)
+		{
+			vin = vn;
+			make = mk;
+			model = mdl;
+			mileage = mil;
+		}
+
+		public static void Main(String[] args)
+		{
+			Car c = new Car("ABC123", "Toyota", "Camry", 50000);
+			Car d = new Car("XYZ789", "Honda", "Civic", 20000);
+			c.Drive(50000);
+            Console.WriteLine(c.Display());
+			Console.WriteLine(d.Display());
+			Console.WriteLine(c.Drive(50000));
+			Console.WriteLine(d.Drive(20000));
+		}
+
+		public int Drive(int mileage)
+		{
+			mileage += 10000;
+			return mileage;
+		}
+		public string Display()
+		{
+            return vin +" "+ make + " " + model + " " + mileage; 
+		}
+	}
+}

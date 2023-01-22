@@ -1,0 +1,42 @@
+A total of 120 minutes is recommended for this quiz. Time allocation suggestion: Problem 1 (20%), Problem 2 (30%), Problem 3 (50%).
+
+1. What does the following code snippet accomplish? What role does variable z play? Briefly explain the algorithm.
+    int x=3, y=5, z;
+    z = x; x = y; y = z;
+
+This code snippet declares integer values to variables x, y, and z. Initially, x=3, y=5, and z is simply delcared an integer. Later,
+z=3, x=5, and y=3. The algorith uses multiple assignments and z as a temporary variable to replace the value of x as 5 and y as 3.
+
+
+2. What does the following code snippet do (what happens to x and y after the two assignment statements)? Briefly explain the algorithm.
+    double x = 3.2, y = 5.8;
+    x = x + y;
+    y = x - y;
+    x = x - y;
+
+Mathematically turns double x to 5.8 and double y to 3.2, switching their values.
+
+
+3. Use if-else statement to write a method that finds the median of three double numbers and return the median. Note that median is the middle of three numbers.
+using System;
+
+public class Program
+{
+	public static double Median(double a, double b, double c)
+	{
+		if ((a < b && b < c) || (c < b && b < a))
+			return b;
+
+		else if ((b < a && a < c) || (c < a && a < b))
+			return a;
+
+		else
+			return c;
+	}
+
+	public static void Main()
+	{
+		double a = 6.1, b = 3.2, c = 4.5;
+		Console.WriteLine("The median is " + Median(a, b, c));
+	}
+}

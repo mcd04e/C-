@@ -1,0 +1,55 @@
+CSC180 Quiz #4
+
+1. Read the following program and explain what it does. No need to explain every line of code except those inside the for loop. 
+
+using System;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int n1 = 0, n2 = 1, n3, i, number;
+        Console.Write("Enter a positive integer: ");
+        number = int.Parse(Console.ReadLine());
+        Console.Write(n1 + " " + n2 + " ");
+        for (i = 2; i < number; i++)
+        {
+            n3 = n1 + n2;
+            Console.Write(n3 + " ");
+            n1 = n2;
+            n2 = n3;
+        }
+        Console.WriteLine();
+    }
+}
+
+The program is a loop, incrementing int n1(0) and n2(1) the number of times the user designates with the integer inputted (number).
+Those incremented integers are then printed to the console.
+The 1st line of the for loop sets int i=2, the for loop set to repeat until int i is not less than the user input (number).
+The 2nd line sets n3=n1+n2...to (number).
+The 3rd line writes n3 and a ""...to (number).
+The 4th line sets n1 to the value of n2.
+The 5th line sets n2 to the value of n3.
+
+2. Describe the program below.
+using System;
+public class Program
+{
+    public static void DoSomething(string str)
+    {
+        int i = str.Length - 1;
+        while (i >= 0)
+        {
+            Console.Write($"{str[i]}");
+            i--;
+        }
+        Console.Write("\n");
+    }
+    public static void Main()
+    {
+        DoSomething("abcba");
+    }
+}
+
+The program uses DoSomething method to accept a string of characters from the Main method, 
+enumerates the characters with an array (minus one to account for 0), 
+and prints the characters backwards using a descending incrementation of int i.
